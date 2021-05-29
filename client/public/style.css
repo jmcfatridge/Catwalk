@@ -1,0 +1,868 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* ============================================
+                SHARED STYLES
+==============================================*/
+
+.section-title, #q-a-header {
+  font-size: 120%;
+}
+
+.review-widget, .questions-widget, .product-footer, .Overview {
+  padding: 70px 10% 0 10%;
+  min-width: 650px;
+}
+
+.Overview {
+  padding-top: 0;
+}
+
+.product-footer {
+  padding-top: 20px;
+}
+
+.product-style-and-cart {
+  margin-bottom: 50px;
+}
+
+.review-widget {
+  padding-bottom: 70px;
+}
+
+.btn-reviews, .btn-questions, .add-to-cart, .share{
+  background-color: white;
+  border: solid 1px gray;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.review-tile-body-expand:hover,
+.rating-hist-label:hover,
+.review-helpful-yes:hover,
+.review-tile-report-false:hover,
+.review-list-sort-select:hover,
+#loadMoreAnswersLink:hover,
+.helpful-yes:hover,
+.helpful-add-answer-btn:hover,
+.answer-report-false:hover,
+.answer-helpfulness-yes:hover,
+.review-remove-filters:hover,
+.overview-review-number:hover {
+  cursor: default;
+  color:rgb(134, 175, 97);
+}
+
+.btn-add-reviews-close:hover,
+.review-add-modal:hover,
+.review-helpful-yes:hover,
+.answer-helpfulness:hover,
+.helpful-add-answer:hover,
+.star-overview:hover {
+  cursor: default;
+}
+
+
+
+/* ============================================
+                REVIEW
+==============================================*/
+
+/* REVIEWS.JSX --------------*/
+
+.review-widget {
+  display: grid;
+  grid-template-columns: 2.5fr 0.5fr 6fr;
+  grid-template-rows: 40px auto;
+}
+
+.review-title {
+  grid-column-start: 1;
+  grid-column-start: span 3;
+}
+
+/* REVIEWLIST.JSX ----------*/
+
+.review-list {
+  margin-top: 14px;
+}
+
+.review-list-sort {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.review-list-sort-select {
+  border: none;
+  border-bottom: 3px solid black;
+}
+
+/* FILTERS.JSX -------------*/
+
+.review-individual-filter-view{
+  display: inline-block;
+  background-color: rgb(232, 245, 255);
+  padding: 5px 9px;
+  margin: 0 5px 10px 0;
+  border-radius: 20px;
+  font-size: 10px;
+  color: rgb(70, 127, 170);
+}
+
+.review-filter-view {
+  margin-bottom: 10px;
+}
+
+.review-remove-filters {
+  font-weight: 600;
+  font-size: 12px;
+  margin: 5px 0 20px 0;
+}
+
+/* REVIEWTILE.JSX ----------*/
+
+.review-tile-element {
+  margin-bottom: 25px;
+}
+
+.btn-reviews {
+  margin-top: 20px;
+}
+
+.review-tile-body-expand {
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rating-char-entry-meter-bg {
+  background-color: #ededed;
+  height: 9px;
+  margin-top : 2px;
+}
+
+/* ADDREVIEW.JSX ------------*/
+
+.review-add-modal, .review-tile-photo-expand {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+
+  background-color: white;
+  border: solid 1px gray;
+  /* border-radius: 5px; */
+  display: grid;
+  grid-template-rows: 100px auto;
+}
+
+.review-tile-photo-expand {
+  grid-template-rows: 40px auto;
+}
+
+.review-add-header {
+  background-color: rgb(177, 214, 143);
+}
+
+.review-add-title {
+  padding: 20px  0 0 50px;
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.review-add-subtitle {
+  padding-left: 50px;
+  font-size: large;
+}
+
+.review-add-form {
+  padding: 50px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.btn-add-reviews-close {
+  height: 20px;
+  width: 20px;
+  justify-self: end;
+  margin: 10px;
+  border: none;
+  background-color: none;
+}
+
+/* DYNAMICSTARRATING.JSX ----------*/
+
+.review-add-rating-star-on{
+  color: rgb(255, 217, 0);
+}
+
+.review-add-rating-star-off{
+  color: rgb(173, 173, 173);
+}
+
+/* CHARACTERISTICSFORM.JSX ---------*/
+
+.review-add-char-select {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 50px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.review-add-char-title {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 20px;
+}
+
+.review-add-char-radio {
+  display: inline-block;
+  text-align: center;
+
+}
+.review-add-char-radio label {
+  display: block;
+  font-size: small;
+}
+
+/* TEXTDETAIL.JSX --------------------*/
+
+.review-add-summary, .review-add-body {
+  width: 100%;
+}
+
+
+/* AUTHFIELDS.JSX -------------------*/
+
+.review-add-id-warning {
+  width: 90%;
+}
+
+.review-add-id {
+  width: 200px;
+}
+
+/* EMPTYFIELDS.JSX ------------------*/
+
+.review-add-empty {
+  background-color: rgb(255, 236, 236);
+  color: red;
+  font-size: smaller;
+  padding: 10px 20px;
+}
+
+/* PHOTOS.JSX -----------------------*/
+
+.review-added-photo {
+  background-color: rgb(211, 231, 255);
+  margin: 3px 0;
+  padding-top: 4px;
+  padding-left: 4px;
+  display: block;
+  width: fit-content;
+  min-width: 50%;
+  height: 28px;
+}
+
+/* SHARED ---------------------------*/
+
+.review-add-body-min, .review-add-id-warning, .review-add-email-invalid  {
+  font-size: smaller;
+  color:rgb(173, 173, 173)
+}
+
+.required {
+  color: red;
+}
+
+/* width */
+.review-list-tile-collection::-webkit-scrollbar,
+.review-add-form::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.review-list-tile-collection::-webkit-scrollbar-track,
+.review-add-form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.review-list-tile-collection::-webkit-scrollbar-thumb,
+.review-add-form::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.review-list-tile-collection::-webkit-scrollbar-thumb:hover,
+.review-add-form::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ============================================
+                OVERVIEW
+==============================================*/
+
+/*Image Gallery and Style Selector Layout*/
+.image-style-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product-style-and-cart {
+  flex-grow: 3;
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.image_gallery {
+  margin-right: 50px;
+  min-width: 800px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*================*/
+
+/*Image Gallery*/
+.gallery-thumbnail {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  filter: grayscale(1);
+  /* border: solid 2px rgba(0, 0, 0, 0.24); */
+  box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.6), 0 0px 6px 0 rgba(0, 0, 0, 0.30);
+}
+
+.image-slide {
+  position: relative;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 100%;
+  min-height: 800px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+}
+
+.expanded-image-slide {
+  background-size: 100% 100%;
+  background-position: center;
+  height: 1000px;
+}
+
+.thumbnail-carousel {
+  width: 75px;
+  height: 650px;
+  overflow-x: hidden;
+}
+
+.carousel-overview-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  overflow-y: auto;
+  max-height: 90%;
+  width: 90px;
+}
+
+.right {
+  width: 30px;
+  height: 30px;
+  transform: rotate(90deg);
+}
+
+.left {
+  width: 30px;
+  height: 30px;
+  visibility: hidden;
+  transform: rotate(-90deg);
+}
+
+.up {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  visibility: hidden;
+}
+
+.down {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  transform: rotate(180deg);
+}
+
+.expand-button {
+  height: 800px;
+  width: 85%;
+}
+
+.expand-button:hover {
+  cursor: zoom-in;
+}
+
+.compress-button {
+  height: 1000px;
+  width: 85%;
+  background-repeat: no-repeat;
+}
+
+.compress-button:hover {
+  cursor: zoom-out;
+}
+
+/*================*/
+
+/*Style Selector*/
+.style_thumbnails {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 700px;
+  width: 60%;
+}
+
+.thumbnail-container {
+  width: 110px;
+  height: 110px;
+  margin: 1%;
+  margin-right: 7%;
+  padding: 0px;
+}
+
+.selector {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.fa-check-circle {
+  position: relative;
+  left: 80px;
+  bottom: 100px;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(139, 179, 87);
+  border-radius: 50%;
+}
+
+/*This code takes the title attribute of the selector class and displays it on hover*/
+.selector[title]:hover:after {
+  color: red;
+  content: attr(title);
+  position: absolute;
+  left: 50px;
+}
+
+.star-overview {
+  display: flex;
+  width: 265px;
+  text-decoration: none;
+  font-size: smaller;
+}
+
+.slogan h4 {
+  margin-top: 0
+}
+
+
+/*=================*/
+
+/*Product Information*/
+.product_name {
+  font-size: 80px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.description {
+  width: 40%;
+  padding-right: 17%;
+  border-right: solid 2px black;
+}
+
+.feature_list {
+  width: 30%;
+  padding-left: 5%;
+  justify-self: end;
+}
+
+.select-size-box {
+  border: solid 1px gray;
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 300px;
+  display: inline-block;
+}
+
+.quantity-form-box {
+  border: solid 1px gray;
+  margin-top: 20px;
+  width: 150px;
+  display: inline-block;
+}
+
+.add-to-cart {
+  width: 330px;
+  text-align: left;
+}
+
+.add-to-cart-plus {
+  margin-left: 150px;
+}
+
+.share {
+  width: 125px
+}
+
+.select-size, .quantity-form{
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+
+}
+
+.select-size {
+  width: 95%
+}
+
+.quantity-form {
+  width: 90%;
+}
+
+.select-size:focus, .quantity-form:focus {
+  outline:0;
+}
+
+/* ============================================
+                RELATIONS
+==============================================*/
+
+.relations-container {
+  width: 80%;
+  min-width: 325px;
+  /*border: 1px solid red;*/
+}
+
+.component-wrapper {
+  width: 100%;
+  /*border: 1px solid blue;*/
+}
+
+.carousel-container {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  /*border: 1px solid orange;*/
+}
+
+.carousel-wrapper {
+  display: flex;
+  /*border: 1px solid greenyellow;*/
+  /*justify-content: center;*/
+  width: 90%;
+  position: relative;
+}
+
+.carousel-content-wrapper {
+  overflow: hidden;
+  display: flex;
+  /*border: 1px solid pink;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  width: 90%;
+  height: 400px;
+}
+.carousel-content {
+  display: flex;
+  /*border: 1px solid aqua;*/
+  background-color: aqua;
+  transition: all 250ms linear;
+  width: 22%;
+  -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
+  scrollbar-width: none;  /* hide scrollbar in Firefox */
+}
+
+@media (max-width: 1600px) { /*adjustment at 1440px screen width*/
+  .carousel-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1450px) { /*adjustment at 1305px screen width*/
+  .carousel-content-wrapper {
+    width: 100%;
+  }
+}
+/*
+@media (max-width: 1250px) {
+
+}
+
+@media (max-width: 1050px) {
+
+}
+
+@media (max-width: 850px) {
+
+}
+
+@media (max-width: 450px) {
+
+}
+*/
+
+/* hide scrollbar in webkit browser */
+.carousel-content::-webkit-scrollbar, .carousel-content::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-content > * {
+  width: 250px;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.left-arrow, .right-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.left-arrow {
+  left: 24px;
+}
+
+.right-arrow {
+  right: 24px;
+}
+
+
+
+
+/* ============================================
+                QUESTIONS
+==============================================*/
+
+.search-questions-div {
+  display: grid;
+    grid-template-rows: 100px auto;
+    grid-auto-columns: auto;
+}
+
+#searchQuestions {
+  background-color: white;
+  border: solid 1px gray;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.questions-list {
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.btn-questions {
+  background-color: white;
+  border: solid 1px gray;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+  /* margin-left: 20px; */
+  margin-right: 25px;
+}
+
+.default-answer-header {
+  display: grid;
+  grid-template-columns: 25px auto;
+}
+
+.helpful-add-answer {
+  float: right;
+  font-size: 12px;
+  color: gray;
+}
+
+.answers {
+  margin-top: 20px;
+  /* margin-bottom: 10px; */
+  display: grid;
+  grid-template-columns: 25px auto;
+}
+
+.answers-more {
+  margin-top: 10px;
+}
+
+.answers-list {
+  margin-bottom: 20px;
+}
+
+.answers-individual-text {
+  font-size: 90%;
+}
+.answerer-info {
+  margin-top: 10px;
+  color: gray;
+  font-size: 80%;
+
+}
+
+#loadMoreAnswersLink {
+  font-size: 12px;
+  margin-left: 25px;
+}
+
+/* ADDQUESTION.JSX ---------- */
+
+
+
+.question-add-modal {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 100px auto;
+}
+
+.question-add-header {
+  background-color: rgb(177, 214, 143);
+}
+
+.question-add-title {
+  padding: 20px 0 0 50px;
+  font-size: xx-large;
+  font-weight: 600px;
+}
+
+.btn-question-add-close {
+  height: 20px;
+  width: 20px;
+  justify-self: end;
+  margin: 10px;
+  border: none;
+  background-color: none;
+}
+
+.question-add-subtitle {
+  padding-left: 50px;
+  font-size: large;
+}
+
+.question-add-form {
+  padding: 50px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.question-add {
+  margin: 10px;
+}
+
+.question-add-body {
+  width: 100%;
+}
+
+/* ADDANSWER.JSX ---------- */
+
+.answer-add-modal {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 100px auto;
+}
+
+.answer-add-header {
+  background-color: rgb(177, 214, 143);
+}
+
+.answer-add-title {
+  padding: 20px 0 0 50px;
+  font-size: xx-large;
+  font-weight: 600px;
+}
+
+.answer-add-subtitle {
+  padding-left: 50px;
+  font-size: large;
+}
+
+.btn-answer-add-close {
+  height: 20px;
+  width: 20px;
+  justify-self: end;
+  margin: 10px;
+  border: none;
+  background-color: none;
+}
+
+.answer-add-form {
+  padding: 50px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.answer-add-body {
+  width: 100%;
+
+}
+
+/* QA-AUTHFIELDS.JSX ---------- */
+
+.q-a-id-warning {
+  width: 90%;
+  font-size: smaller;
+  margin-bottom: 10px;
+}
+
+.q-a-add-email-invalid {
+  color: red;
+  font-size: smaller;
+}
+
+/* QA-EMPTYFIELDS.JSX ---------- */
+
+.q-a-add-empty {
+  background: rgb(255, 236, 236);
+  color: red;
+  font-size: smaller;
+  padding: 10px 20px;
+}
